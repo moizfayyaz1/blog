@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<h1 class="title">Your personal information</h1>
+<hr>
+<img src="{{request.user.Profile.image.url}}" alt="" width="150" height="180">
+<p><strong>Full name:</strong>  {{user.first_name}} {{user.last_name}}</p>
+<p><strong>Username:</strong>  {{user.username}}</p>
+<p><strong>Email:</strong> {{user.email}}</p>
+
+{% endblock %}

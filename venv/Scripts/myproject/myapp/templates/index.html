@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to the blog</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <style>
+        #pro{
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar is-info">
@@ -13,8 +18,9 @@
             <a href="/" class="navbar-item"><strong>My Blog</strong></a>
             {% if user.is_authenticated %}
                 <li class="navbar-item"><strong>Hello, {{user.first_name}}</strong></li>
+                <img id='pro' src="{{request.user.Profile.image.url}}" alt="" width="50" height="60" >
                 <a href="accounts/logout" class="navbar-item"><strong>Logout</strong></a>
-                <a href="" class="navbar-item"><strong>Profile</strong></a>
+                <a href="accounts/profile" class="navbar-item"><strong>Profile</strong></a>
                 {% else %}
                 <a href= "accounts/register" class="navbar-item"><strong>Register now</strong></a>
                 <a href= "accounts/login" class="navbar-item"><strong>Login</strong></a>
